@@ -46,6 +46,30 @@ body {
   transition: all 0.12s ease-out;
 }
 
+.hexagon-nav li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  clip-path: polygon(
+      /* Outer hexagon, clockwise */
+      25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%,
+      /* First point of outer hexagon */
+      25% 0,
+      /* Inner hexagon, counter-clockwise */
+      26% 1.73%, 1% 50%, 26% 98.27%, 74% 98.27%, 99% 50%, 74% 1.73%,
+      /* First point of inner hexagon */
+      26% 1.73%
+  );
+}
+
+.hexagon-nav li:hover:before {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .hexagon-nav li a {
   display: flex;
   align-items: center;  /* Center vertical */
@@ -54,6 +78,10 @@ body {
   color: #fff;
   text-decoration: none;
   transition: inherit;
+}
+
+.hexagon-nav li a:hover {
+  background-color: rgba(199, 25, 31, 0.88);  /* Red */
 }
 
 .hexagon-nav li a h1 {
@@ -77,25 +105,6 @@ body {
 .hexagon-nav li a:hover img {
   visibility: visible;
   opacity: 1;
-}
-
-.hexagon-nav li svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  fill: rgba(0, 0, 0, 0);
-  stroke: #fff;
-  stroke-width: 2px;
-  transition: inherit;
-}
-
-.hexagon-nav li:hover svg {
-  fill: rgba(199, 25, 31, 0.88);  /* Red */
-  stroke: rgba(0, 0, 0, 0);
 }
 
 @media (min-width: 375px) {

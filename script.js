@@ -1,11 +1,4 @@
 $(document).ready(function() {
-  // Add hexagons
-  $('.hexagon-nav li').append(
-      '<svg xmlns="http://www.w3.org/2000/svg" verion="1.1" viewBox="0 0 60 52">' +
-        '<polygon points="15,0 45,0 60,26 45,52 15,52 0,26"/>' +
-      '</svg>'
-  );
-
   // Handle window resizes
   var n;       // Number of columns
   var width;   // Window width
