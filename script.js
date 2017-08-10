@@ -1,9 +1,12 @@
 $(document).ready(function() {
+  // Detect features
+  $('html').removeClass('no-js').addClass('js');
+  var isTouchDevice = 'ontouchstart' in window;  // Whether or not touch is supported
+
   // Handle window resizes
   var n;       // Number of columns
   var width;   // Window width
   var height;  // Window height
-  var isTouchDevice;  // Whether or not touch is supported
   function handleResize() {
     // Determine number of columns
     var containerWidth = $('.container').css('width');
@@ -18,10 +21,10 @@ $(document).ready(function() {
     } else {
       n = 1;
     }
-    // Get window properties
+    // Get window dimensions
     width = window.innerWidth;
     height = window.innerHeight;
-    isTouchDevice = 'ontouchstart' in window;
+
     // Reset transitions
     $('.hexagon-nav li').stop().removeClass('grow up right down left');
     $('.hexagon-nav').css('transform', '');
@@ -29,7 +32,7 @@ $(document).ready(function() {
   handleResize();
   $(window).resize(handleResize);
 
-  // Handle hexagon hovers
+  // Handle hexagon scaling and translations
   $('.hexagon-nav li').hover(
       function() {
         var i = $(this).index() + 1;  // nth child index
@@ -106,15 +109,15 @@ $(document).ready(function() {
       }
   );
 
-  // Handle hexagon grid tilt
-  $(document).mousemove(function(e) {
-    if (!isTouchDevice) {  // Only enable for non-touch devices
+  // Handle hexagon grid tilt for non-touch devices
+  if (!isTouchDevice) {
+    $(document).mousemove(function(e) {
       var x = (e.pageY / height) * 30 - 15;
       var y = -((e.pageX / width) * 60 - 30);
       $('.hexagon-nav').css(
           'transform',
           'perspective(1200px) rotateX(' + x + 'deg) rotateY(' + y + 'deg)'
       );
-    }
-  });
+    });
+  }
 });

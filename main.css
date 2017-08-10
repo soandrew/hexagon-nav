@@ -67,7 +67,7 @@ body {
   );
 }
 
-.hexagon-nav li:hover:before {
+.js .hexagon-nav li:hover:before {
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -85,14 +85,14 @@ body {
   background-color: rgba(199, 25, 31, 0.88);  /* Red */
 }
 
-.hexagon-nav li a h1 {
+.hexagon-nav li a .text {
   margin: 0;
   font: bold 18px sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.hexagon-nav li a img {
+.hexagon-nav li a .bg {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -103,7 +103,7 @@ body {
   transition: inherit;
 }
 
-.hexagon-nav li a:hover img {
+.hexagon-nav li a:hover .bg {
   visibility: visible;
   opacity: 1;
 }
