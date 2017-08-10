@@ -48,6 +48,7 @@ body {
 }
 
 .hexagon-nav li:before {
+  /* Hexagon border */
   content: "";
   position: absolute;
   top: 0;
@@ -63,37 +64,44 @@ body {
       /* Inner hexagon, counter-clockwise */
       26% 1.73%, 1% 50%, 26% 98.27%, 74% 98.27%, 99% 50%, 74% 1.73%,
       /* First point of inner hexagon */
-      26% 1.73%
-  );
-}
-
-.js .hexagon-nav li:hover:before {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.hexagon-nav li a {
-  display: flex;
-  align-items: center;  /* Center vertical */
-  justify-content: center;  /* Center horizontal */
-  height: 100%;
-  color: #fff;
-  text-decoration: none;
+      26% 1.73%);
   transition: inherit;
 }
 
-.hexagon-nav li a:hover {
-  background-color: rgba(199, 25, 31, 0.88);  /* Red */
+.hexagon-nav li:after {
+  /* Hexagon overlay */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: inherit;
 }
 
-.hexagon-nav li a .text {
+.hexagon-nav li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hexagon-nav li .text {
+  display: flex;
+  align-items: center;  /* Center vertical */
+  justify-content: center;  /* Center horizontal, short text */
+  text-align: center;  /* Center horizontal. long text */
+  height: 100%;
   margin: 0;
+  color: #fff;
   font: bold 18px sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.hexagon-nav li a .bg {
+.hexagon-nav li .bg {
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -103,7 +111,15 @@ body {
   transition: inherit;
 }
 
-.hexagon-nav li a:hover .bg {
+.js .hexagon-nav li:hover:before {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.hexagon-nav li:hover:after {
+  background-color: rgba(199, 25, 31, 0.88);  /* Red */
+}
+
+.hexagon-nav li:hover .bg {
   visibility: visible;
   opacity: 1;
 }
