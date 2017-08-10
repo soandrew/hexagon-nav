@@ -4,7 +4,11 @@ Style and script to decorate an HTML navigation list as a hexagonal user interfa
 
 ## Usage
 
-The main decorator is the `hexagon-nav` class which should be added to the navigation `ul` element. Then within your navigation links, wrap the link text in an `h1` tag and optionally include an `img` to specify the background image for that link.
+The main decorator is the `hexagon-nav` class which should be added to the navigation `ul` element.
+
+Text within a list item should be wrapped in a tag that includes the class `text`. Generally this would be the `a` tag used for navigation links.
+
+Optionally for each list item, include an `img` to specify the background image for that item.
 
 ## Example
 
