@@ -119,6 +119,10 @@ body {
   background-color: rgba(199, 25, 31, 0.88);  /* Red */
 }
 
+.hexagon-nav .nav li.no-image:hover:after {
+  background-color: rgb(199, 25, 31);  /* Red */
+}
+
 .hexagon-nav .nav li:hover .bg {
   visibility: visible;
   opacity: 1;
