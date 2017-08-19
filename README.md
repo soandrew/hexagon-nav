@@ -8,7 +8,7 @@ The main decorator is the `hexagon-nav` class which should be added to the navig
 
 Text within a list item should be wrapped in a tag with the class `text`. Generally this would be the `a` tag used for navigation links.
 
-For each list item, include an `img` to specify the background image for that item. Otherwise, mark the list item with the `no-image` class.
+For each list item, include an `img` with the `bg` class to specify the background image for that item. Otherwise, mark the list item with the `no-image` class.
 
 ## Example
 
