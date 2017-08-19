@@ -81,16 +81,16 @@ body {
 }
 
 .hexagon-nav .nav li a {
+  display: flex;
+  align-items: center;  /* Center vertical */
+  justify-content: center;  /* Center horizontal, short text */
+  text-align: center;  /* Center horizontal, long text */
+  height: 100%;
   color: inherit;
   text-decoration: none;
 }
 
 .hexagon-nav .nav li .text {
-  display: flex;
-  align-items: center;  /* Center vertical */
-  justify-content: center;  /* Center horizontal, short text */
-  text-align: center;  /* Center horizontal. long text */
-  height: 100%;
   margin: 0;
   color: #fff;
   font: bold 18px sans-serif;
