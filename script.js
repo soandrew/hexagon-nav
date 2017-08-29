@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  // Detect features
-  $('html').removeClass('no-js').addClass('js');
+  // Detect touch devices
   var isTouchDevice = 'ontouchstart' in window;  // Whether or not touch is supported
 
   // Handle window resizes
