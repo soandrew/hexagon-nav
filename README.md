@@ -4,7 +4,7 @@ Style and script to decorate an HTML navigation list as a hexagonal user interfa
 
 ## Usage
 
-The main decorator is the `hexagon-nav` class which should be added to the navigation `nav` element. Then the `nav` class should be added to the inner `ol` or `ul` list element.
+The main points of customizability are the text and background image for each list item. 
 
 Text within a list item should be wrapped in a tag with the class `text`. Generally this would be the `a` tag used for navigation links.
 
